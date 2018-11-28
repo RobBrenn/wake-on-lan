@@ -27,7 +27,7 @@ LOGGER = getLogger(__name__)
 
 class WakeOnLanSkill(MycroftSkill):
     def __init__(self):
-        super(HelloWorldSkill, self).__init__(name="WakeOnLanSkill")
+        super(WakeOnLanSkill, self).__init__(name="WakeOnLanSkill")
 
 #@intent_handler(IntentBuilder("").require("Wake").require("Device"))
 @intent_handler(IntentBuilder("").require("Wake")) #.require("Device"))
