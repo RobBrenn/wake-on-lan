@@ -29,21 +29,21 @@ class WakeOnLanSkill(MycroftSkill):
     def __init__(self):
         super(WakeOnLanSkill, self).__init__(name="WakeOnLanSkill")
 
-#@intent_handler(IntentBuilder("").require("Wake").require("Device"))
-@intent_handler(IntentBuilder("").require("Wake")) #.require("Device"))
-def handle_wake(self, message):
+    #@intent_handler(IntentBuilder("").require("Wake").require("Device"))
+    @intent_handler(IntentBuilder("").require("Wake")) #.require("Device"))
+    def handle_wake(self, message):
 
-     #handle having a device name
-     #device = message.data.get("Device")
+         #handle having a device name
+         #device = message.data.get("Device")
 
-     address = self.settings.get("address")
+         address = self.settings.get("address")
 
-     #handle if device is not set
-     #if not url_rs
+         #handle if device is not set
+         #if not url_rs
 
-     #handle invalid address
+         #handle invalid address
 
-     send_magic_packet(address)
+         send_magic_packet(address)
 
 def create_skill():
     return WakeOnLanSkill()
