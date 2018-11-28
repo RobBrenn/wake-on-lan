@@ -1,0 +1,22 @@
+{
+    "name": "wake-on-lan",
+    "skillMetadata": {
+        "sections": [
+            {
+                "name": "Options",
+                "fields": [
+                    {
+                        "type": "label",
+                        "label": "Please put the device MAC address"
+                    },
+                    {
+                        "name": "address",
+                        "type": "text",
+                        "label": "MAC address",
+                        "value": ""
+                    }
+                ]
+            }
+        ]
+    }
+}

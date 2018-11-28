@@ -1,0 +1,7 @@
+{
+  "utterance": "Wake up",
+  "intent_type": "wake_up_device",
+  "intent": {
+    "WakeUp": "wake up"
+  }
+}
