@@ -20,6 +20,8 @@ from adapt.intent import IntentBuilder
 from mycroft.skills.core import MycroftSkill, intent_handler
 from mycroft.util.log import getLogger
 
+from wakeonlan import send_magic_packet
+
 __author__ = 'RobBren'
 
 LOGGER = getLogger(__name__)
