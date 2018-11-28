@@ -7,8 +7,15 @@
                 "fields": [
                     {
                         "type": "label",
-                        "label": "Please put the device MAC address"
+                        "label": "Please input the device names, and MAC addresses"
                     },
+                    {
+                      "name": "device",
+                      "type": "text",
+                      "label": "Device name",
+                      "value": ""
+                    }
+                    ,
                     {
                         "name": "address",
                         "type": "text",

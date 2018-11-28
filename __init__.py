@@ -21,7 +21,7 @@ from mycroft.skills.core import MycroftSkill, intent_handler
 from mycroft.util.log import getLogger
 
 from wakeonlan import send_magic_packet
-
+import re # for regex expressions
 __author__ = 'RobBren'
 
 LOGGER = getLogger(__name__)
@@ -31,21 +31,28 @@ class WakeOnLanSkill(MycroftSkill):
     def __init__(self):
         super(WakeOnLanSkill, self).__init__(name="WakeOnLanSkill")
 
-    #@intent_handler(IntentBuilder("").require("Wake").require("Device"))
-    @intent_handler(IntentBuilder("").require("Wake")) #.require("Device"))
+    @intent_handler(IntentBuilder("").require("Wake").require("Device"))
     def handle_wake(self, message):
 
-         #handle having a device name
-         #device = message.data.get("Device")
+        #handle having a device name
+        device = message.data.get("Device")
+        if device not self.settings.get("device"):
+            self.speak("Device not recognised")
+        else:
+            address = self.settings.get("address")
 
-         address = self.settings.get("address")
-
-         #handle if device is not set
-         #if not url_rs
-
-         #handle invalid address
-
-         send_magic_packet(address)
+            #handle if device is not set
+            if not url_rs:
+                self.speak("Please set the address in the settings")
+            else:
+                #handle invalid address
+                #regex via: https://stackoverflow.com/users/320726/6502
+                #from: https://stackoverflow.com/questions/7629643/how-do-i-validate-the-format-of-a-mac-address
+                if re.match("[0-9a-f]{2}([-:.]?)[0-9a-f]{2}(\\1[0-9a-f]{2}){4}$", x.lower()):
+                    send_magic_packet(address)
+                    self.speak("Waking up the device")
+                else:
+                    self.speak("Invalid address")
 
 def create_skill():
     return WakeOnLanSkill()
