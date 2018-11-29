@@ -39,7 +39,7 @@ class WakeOnLanSkill(MycroftSkill):
         device = str(self.settings.get("device").lower())
 
         if uttered_device != device:
-            self.speak("Device not recognised")
+            self.speak( str(uttered_device) + " is not recognised")
         else:
             address = self.settings.get("address")
 
@@ -52,7 +52,7 @@ class WakeOnLanSkill(MycroftSkill):
                 #from: https://stackoverflow.com/questions/7629643/how-do-i-validate-the-format-of-a-mac-address
                 if re.match("[0-9a-f]{2}([-:.]?)[0-9a-f]{2}(\\1[0-9a-f]{2}){4}$", address.lower()):
                     send_magic_packet(address)
-                    self.speak("Waking up the device")
+                    self.speak("Waking up " + str(device))
                 else:
                     self.speak("Invalid address")
 
