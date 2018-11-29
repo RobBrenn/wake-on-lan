@@ -35,8 +35,12 @@ class WakeOnLanSkill(MycroftSkill):
     def wake_up_device(self, message):
 
         #handle having a device name
-        device = message.data.get("Device")
-        if device is not self.settings.get("device").lower():
+        uttered_device = message.data.get("Device")
+        self.speak("uttered: " + uttered_device)
+        device = self.settings.get("device").lower()
+        self.speak("target device: " + device)
+
+        if uttered_device is not device:
             self.speak("Device not recognised")
         else:
             address = self.settings.get("address")
