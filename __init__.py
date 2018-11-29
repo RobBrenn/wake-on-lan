@@ -44,7 +44,7 @@ class WakeOnLanSkill(MycroftSkill):
             address = self.settings.get("address")
 
             #handle if device is not set
-            if not url_rs:
+            if not address:
                 self.speak("Please set the address in the settings")
             else:
                 #handle invalid address
