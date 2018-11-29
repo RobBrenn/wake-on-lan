@@ -32,7 +32,7 @@ class WakeOnLanSkill(MycroftSkill):
         super(WakeOnLanSkill, self).__init__(name="WakeOnLanSkill")
 
     @intent_handler(IntentBuilder("").require("Wake").require("Device"))
-    def handle_wake(self, message):
+    def wake_up_device(self, message):
 
         #handle having a device name
         device = message.data.get("Device")
