@@ -1,8 +1,0 @@
-{
-  "utterance": "Wake up desktop",
-  "intent_type": "wake_up_device",
-  "intent": {
-    "WakeUp": "Wake",
-    "Device": "desktop"
-  }
-}

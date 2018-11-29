@@ -1,8 +1,8 @@
 {
-  "utterance": "Turn desktop",
+  "utterance": "turn on desktop",
   "intent_type": "wake_up_device",
   "intent": {
-    "WakeUp": "Turn",
+    "WakeKeyword": "turn on",
     "Device": "desktop"
   }
 }
