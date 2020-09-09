@@ -6,7 +6,7 @@ A skill that uses the Wake On Lan protocol to wake up a device.
 
 ## Examples
 * "Wake up Desktop"
-* "Turn On Kodi"
+* "Turn On Computer"
 
 ## Setup
 1. Copy or clone this repository into mycroft's skills directory:
